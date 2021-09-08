@@ -9,10 +9,7 @@ import (
 
 func gitCommand(name string, args ...string) (*exec.Cmd, io.Reader) {
 	cmd := exec.Command(name, args...)
-	//cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
-	cmd.SysProcAttr = &syscall.SysProcAttr{
-		CreationFlags: syscall.CREATE_NEW_PROCESS_GROUP,
-	}
+	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
 	cmd.Env = os.Environ()
 
 	r, _ := cmd.StdoutPipe()
