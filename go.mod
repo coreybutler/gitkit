@@ -1,4 +1,4 @@
-module github.com/sosedoff/gitkit
+module github.com/coreybutler/gitkit
 
 go 1.16
 
